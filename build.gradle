@@ -1,0 +1,19 @@
+plugins {
+    id 'application'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'com.github.gotson.nightmonkeys:imageio-heif:+'
+    runtimeOnly "org.slf4j:slf4j-nop:1.7.25"
+}
+
+application {
+    mainClass= "HelloWorld"
+    applicationDefaultJvmArgs = ['--enable-preview', '--enable-native-access=ALL-UNNAMED', '-Djava.library.path=/opt/homebrew/lib/']
+}
+
+defaultTasks 'run'
